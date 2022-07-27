@@ -13,22 +13,15 @@ const getHtml = ({hostname, pathname}) => {
 
         let response = '';
         req = https.request(options, res => {
-            // console.log(`statusCode: ${res.statusCode}`);
-            // console.log('res', res.headers);
 
             res.on('data', d => {
-                // console.log('d', d, typeof d.toString())
                 response += d;
                 return d;
-                // process.stdout.write(d);
             });
 
             res.on('end', d => {
                 response = response.toString();
-                // console.log('response', response)
                 return resolve({htmlString: response, statusCode: res.statusCode});
-                // return response;
-                // process.stdout.write(d);
             });
         });
 
@@ -42,7 +35,5 @@ const getHtml = ({hostname, pathname}) => {
 
     })
 };
-
-// getHtml({hostname: 'stackoverflow.com', pathname: ''}).then(console.log);
 
 module.exports = getHtml;

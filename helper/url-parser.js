@@ -12,5 +12,4 @@ const urlParser = (url) => {
     return {hostname, pathname, protocol};
 };
 
-urlParser('stackoverflow.com');
 module.exports = urlParser;
