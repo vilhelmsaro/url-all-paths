@@ -1,4 +1,3 @@
-const url = require("url");
 const urlFinder = (str, urlsSet, domain, arr) => {
     let flag = true;
     let indexOfPrev = 0;

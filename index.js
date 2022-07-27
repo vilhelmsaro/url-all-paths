@@ -32,16 +32,19 @@ const collector = async (inputDomain, outputArr) => {
 
 };
 
+//inputs for the service here!
 const inputData = [{_website: ['https://encro.dev/?attr=3&aasjadn=asjasd']},
     {_website: ['https://esterox.am']}
 ];
 
 const main = async (inputData) => {
     const outputArr = [];
+
     for await (const el of inputData) {
         const domain = el._website[0];
         await collector(domain, outputArr);
     }
+
     console.log('see the output below...');
     for (const element of outputArr) {
         console.log(`output of the website ${element[0]._website}`);
